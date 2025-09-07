@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kemal Gafan</title>
+
+
+    <!-- My CSS -->
+     <link rel="stylesheet" href="styles/main.css">
+     <link rel="stylesheet" href="styles/navbar.css">
+     <link rel="stylesheet" href="styles/cursor.css">
+     <link rel="stylesheet" href="styles/hero.css">
+
+     <!-- Font Awesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+     <!-- AOS -->
+     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+</head>
+<body>
+    
+    <!-- Custome Cursor -->
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  
+                0 1 0 0 0  
+                0 0 1 0 0  
+                0 0 0 35 -15" result="goo" />
+                <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
+    <div id="cursor" class="Cursor"></div>
+
+    <!-- Navbar -->
+    <div class="nav-container">
+        <h1 class="brand">
+            port<span>folio</span>
+        </h1>
+        <div class="nav-link">
+            <a href="#home" class="nav-links">Home</a>
+            <a href="#about" class="nav-links">About</a>
+            <a href="#skill" class="nav-links">Skill</a>
+            <a href="#experience" class="nav-links">Education & Experience</a>
+            <a href="#project" class="nav-links">Project</a>
+            <a href="#contact" class="nav-links">Contact</a>
+        </div>
+        <div class=""></div>
+    </div>
+
+    <!-- Main Content -->
+     <div class="container">
+
+        <!-- Hero Section -->
+         <section class="hero">
+            <div class="hero-content">
+                <div class="hero-subtitle">Hello Everyone, I am</div>
+                <div class="hero-title">Muhammad Kemal <span>Gafan</span> </div>
+                <p class="hero-description" data-aos="fade-up" data-aos-delay="600">
+                    I'm a, <span id="typed" ></span>
+                </p>
+                <div class="hero-social">
+                    <a href="https://github.com/zayennn" class="github">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.instagram.com/zaayeenn_/" class="instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/elang-atha-zahran-100459220/" class="linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="image-content hero">
+                <img src="./images/me.jpg" alt="Profile Image">
+            </div>
+
+         </section>
+
+     </div>
+
+</body>
+
+<!-- Typed JS -->
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<!-- My JS -->
+<script src="./script/cursor.js"></script>
+<script src="./script/typed.js"></script>
+<script src="./script/aos.js"></script>
+
+
+</html>

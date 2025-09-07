@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
+
+:root {
+    --primary-color: #525CEB;
+    --secondary-color: #00cec9;
+    --dark-color: #0f0e17;
+    --light-color: #fffffe;
+    --accent-color: #FFC7A7;
+    --text-color: #a7a9be;
+    --text-dark: #2d3436;
+    --bg-dark: #0f0e17;
+    --bg-light: #fffffe;
+    --bg-card: #110f1e;
+    --overlay-color: rgba(15, 14, 23, 0.8);
+    --transition: all 0.3s ease;
+    --border-radius: 8px;
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    --section-padding: 100px 0;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-dark);
+    color: #333;
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+    position: relative;
+}
