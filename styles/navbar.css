@@ -1,0 +1,68 @@
+.brand {
+    text-transform: uppercase;
+    font-family: 'Audiowide', cursive;
+}
+
+.brand span {
+    color: #525CEB;
+}
+
+.nav-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    padding: 1rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #0f0e1700;
+    backdrop-filter: blur(10px);
+    color: #fff;
+    z-index: 1000;
+}
+
+.nav-link {
+    display: flex;
+    gap: 2.5rem;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        opacity 0.4s ease;
+}
+
+.nav-link:hover {
+    cursor: pointer;
+}
+
+.nav-links {
+    text-transform: capitalize;
+    font-family: "Exo 2", sans-serif;
+    font-weight: 500;
+    position: relative; 
+    color: var(--bg-light);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.nav-links:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(0) scale(1.05);
+}
+
+.nav-links::after {
+    content: "";
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #525CEB; 
+    transition: width 0.3s ease-in-out;
+}
+
+.nav-links:hover::after {
+    width: 100%; 
+}
