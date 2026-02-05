@@ -59,3 +59,34 @@
   color: var(--primary-color);
   backdrop-filter: blur(6px);
 }
+
+@media (max-width: 768px) {
+  .about-wrapper {
+    grid-template-columns: 1fr; /* satu kolom */
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .about-image {
+    justify-content: center;
+  }
+
+  .about-image img {
+    max-width: 260px; 
+  }
+
+  .about-content {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .about-highlight {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-image img {
+    border-radius: 20px;
+  }
+}

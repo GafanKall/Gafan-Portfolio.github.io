@@ -48,10 +48,49 @@ section.hero {
     text-transform: capitalize;
 }
 
+/* ================= SOCIAL ICON ================= */
+
 .hero-social {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.2rem;
+}
+
+.hero-social a {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.4rem;
+    color: #fff;
+    text-decoration: none;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-social a:hover {
+    transform: translateY(-6px) scale(1.05);
+}
+
+/* glow per platform */
+.hero-social .github:hover {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+}
+
+.hero-social .instagram:hover {
+    background: linear-gradient(45deg, #f09433, #dc2743, #bc1888);
+    box-shadow: 0 0 25px rgba(220, 39, 67, 0.6);
+}
+
+.hero-social .linkedin:hover {
+    background: #0a66c2;
+    box-shadow: 0 0 25px rgba(10, 102, 194, 0.6);
 }
 
 .image-content.hero {

@@ -66,3 +66,78 @@
 .nav-links:hover::after {
     width: 100%; 
 }
+
+/* Hamburger */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    transition: 0.3s ease;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-link {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background-color: rgba(15, 14, 23, 0.95);
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 2rem 0;
+
+        transform: translateY(-20px);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .nav-link.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .nav-links {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+        position: absolute;
+        right: 1.5rem;   /* jarak dari kanan */
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .nav-container {
+        position: fixed;
+    }
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
