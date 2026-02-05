@@ -52,13 +52,18 @@
         <h1 class="brand">
             port<span>folio</span>
         </h1>
-        <div class="nav-link">
+        <div class="nav-link" id="navMenu">
             <a href="#home" class="nav-links">Home</a>
             <a href="#about" class="nav-links">About</a>
             <a href="#skill" class="nav-links">Skill</a>
             <a href="#experience" class="nav-links">Education & Experience</a>
             <a href="#project" class="nav-links">Project</a>
             <a href="#contact" class="nav-links">Contact</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
         <div class=""></div>
     </div>
@@ -75,16 +80,18 @@
                     I'm a, <span id="typed"></span>
                 </p>
                 <div class="hero-social">
-                    <a href="https://github.com/zayennn" class="github">
+                    <a href="https://github.com/GafanKall" class="social github">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://www.instagram.com/zaayeenn_/" class="instagram">
+                    <a href="https://www.instagram.com/gafankemal/" class="social instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/elang-atha-zahran-100459220/" class="linkedin">
+                    <a href="https://www.linkedin.com/in/muhammad-kemal-gafan-kusuma-3b536a29b/"
+                        class="social linkedin">
                         <i class="fab fa-linkedin"></i>
                     </a>
                 </div>
+
             </div>
             <div class="image-content hero">
                 <img src="./images/me.jpg" alt="Profile Image">
@@ -221,27 +228,72 @@
                 <div class="project-list">
 
                     <div class="project-item">
+                        <div class="project-image">
+                            <img src="images/Taskmate.jfif" alt="TaskMate">
+                        </div>
+
                         <div class="project-info">
-                            <h3>To Do List - TaskMate</h3>
+                            <h3>TaskMate</h3>
                             <p>
-                                To do list application with Task Management, Kanban Board, Event Calendar, Notes, Weekly Schedule, and user authentication.
+                                To-do app with Kanban, Calendar, Notes, Weekly Schedule, and authentication.
                             </p>
 
                             <div class="project-tech">
                                 <span>Laravel</span>
                                 <span>MySQL</span>
-                                <span>JavaScript Ajax</span>
-                                <span>Vanilla CSS</span>
+                                <span>AJAX</span>
                             </div>
 
                             <div class="project-action">
-                                <button class="btn-primary">Detail</button>
-                                <a href="#" class="btn-outline">Github</a>
+                                <a class="btn-primary">Detail</a>
+                                <a class="btn-outline">Github</a>
                             </div>
                         </div>
-
+                    </div>
+                    <div class="project-item">
                         <div class="project-image">
-                            <img src="images/Taskmate.jfif" alt="POS Laravel">
+                            <img src="images/Taskmate.jfif" alt="TaskMate">
+                        </div>
+
+                        <div class="project-info">
+                            <h3>TaskMate</h3>
+                            <p>
+                                To-do app with Kanban, Calendar, Notes, Weekly Schedule, and authentication.
+                            </p>
+
+                            <div class="project-tech">
+                                <span>Laravel</span>
+                                <span>MySQL</span>
+                                <span>AJAX</span>
+                            </div>
+
+                            <div class="project-action">
+                                <a class="btn-primary">Detail</a>
+                                <a class="btn-outline">Github</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-item">
+                        <div class="project-image">
+                            <img src="images/Taskmate.jfif" alt="TaskMate">
+                        </div>
+
+                        <div class="project-info">
+                            <h3>TaskMate</h3>
+                            <p>
+                                To-do app with Kanban, Calendar, Notes, Weekly Schedule, and authentication.
+                            </p>
+
+                            <div class="project-tech">
+                                <span>Laravel</span>
+                                <span>MySQL</span>
+                                <span>AJAX</span>
+                            </div>
+
+                            <div class="project-action">
+                                <a class="btn-primary">Detail</a>
+                                <a class="btn-outline">Github</a>
+                            </div>
                         </div>
                     </div>
 
@@ -259,21 +311,26 @@
                     <p>Let’s work together</p>
                 </div>
 
+                <p class="contact-note">
+                    Open for collaboration & freelance projects
+                </p>
+                
                 <div class="contact-grid">
-                    <div class="contact-card">
+
+                    <a href="mailto:gafankall@gmail.com" class="contact-card">
                         <i class="fas fa-envelope"></i>
-                        <p>kemalgafan@gmail.com</p>
-                    </div>
+                        <p>gafankall@gmail.com</p>
+                    </a>
 
-                    <div class="contact-card">
+                    <a href="https://www.instagram.com/gafankemal/" target="_blank" class="contact-card">
                         <i class="fab fa-instagram"></i>
-                        <p>@zaayeenn_</p>
-                    </div>
+                        <p>@gafankemal</p>
+                    </a>
 
-                    <div class="contact-card">
+                    <a href="https://github.com/GafanKall" target="_blank" class="contact-card">
                         <i class="fab fa-github"></i>
-                        <p>github.com/zayennn</p>
-                    </div>
+                        <p>github.com/GafanKall</p>
+                    </a>
                 </div>
 
             </div>
@@ -309,6 +366,7 @@
 <script src="./script/typed.js"></script>
 <script src="./script/aos.js"></script>
 <script src="./script/project.js"></script>
+<script src="./script/navbar.js"></script>
 
 
 </html>

@@ -14,10 +14,11 @@
 .skills-header {
   text-align: center;
   margin-bottom: 60px;
+  font-family: 'Exo 2', sans-serif;
 }
 
 .skills-header h2 {
-  font-size: 36px;
+  font-size: 50px;
 }
 
 .skills-header span {
