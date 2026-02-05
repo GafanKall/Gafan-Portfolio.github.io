@@ -49,3 +49,32 @@ body {
     overflow-x: hidden;
     position: relative;
 }
+
+.section {
+  padding: 120px 0;
+}
+
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-title {
+  margin-bottom: 4rem;
+}
+
+.section-title h2 {
+  font-size: 3rem;
+  font-family: 'Audiowide', cursive;
+  color: var(--light-color);
+}
+
+.section-title span {
+  color: var(--primary-color);
+}
+
+.section-title p {
+  color: var(--text-color);
+  margin-top: 0.5rem;
+}

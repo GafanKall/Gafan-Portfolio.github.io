@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,30 @@
 
 
     <!-- My CSS -->
-     <link rel="stylesheet" href="styles/main.css">
-     <link rel="stylesheet" href="styles/navbar.css">
-     <link rel="stylesheet" href="styles/cursor.css">
-     <link rel="stylesheet" href="styles/hero.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/cursor.css">
+    <link rel="stylesheet" href="styles/hero.css">
+    <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="styles/skill.css">
+    <link rel="stylesheet" href="styles/project.css">
+    <link rel="stylesheet" href="styles/experience.css">
+    <link rel="stylesheet" href="styles/contact.css">
 
-     <!-- Font Awesome -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-     <!-- AOS -->
-     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- DevIcon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 
 </head>
+
 <body>
-    
+    <div id="home"></div>
+
     <!-- Custome Cursor -->
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
         <defs>
@@ -53,15 +64,15 @@
     </div>
 
     <!-- Main Content -->
-     <div class="container">
+    <div class="container">
 
         <!-- Hero Section -->
-         <section class="hero">
+        <section class="hero">
             <div class="hero-content">
                 <div class="hero-subtitle">Hello Everyone, I am</div>
                 <div class="hero-title">Muhammad Kemal <span>Gafan</span> </div>
                 <p class="hero-description" data-aos="fade-up" data-aos-delay="600">
-                    I'm a, <span id="typed" ></span>
+                    I'm a, <span id="typed"></span>
                 </p>
                 <div class="hero-social">
                     <a href="https://github.com/zayennn" class="github">
@@ -79,9 +90,211 @@
                 <img src="./images/me.jpg" alt="Profile Image">
             </div>
 
-         </section>
+        </section>
 
-     </div>
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="section-title" data-aos="fade-up">
+                <h2>About <span>Me</span></h2>
+                <p>Get to know me better</p>
+            </div>
+
+            <div class="about-wrapper">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="images/profile.jpg" alt="Profile Photo">
+                </div>
+
+                <div class="about-content" data-aos="fade-left">
+                    <p>
+                        I am a <strong>junior fullstack web developer</strong> with a passion
+                        for building modern, responsive, and user-friendly web applications.
+                    </p>
+
+                    <p>
+                        I enjoy turning ideas into real digital experiences while continuously
+                        learning new technologies and improving my coding skills.
+                    </p>
+
+                    <div class="about-highlight">
+                        <span>Clean Code</span>
+                        <span>Responsive Design</span>
+                        <span>Real Projects</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skill Section -->
+        <section id="skill" class="skills">
+            <div class="skills-container">
+                <div class="skills-header">
+                    <h2>My <span>Skills</span></h2>
+                    <p>Technologies I work with</p>
+                </div>
+
+                <div class="slider">
+                    <div class="slide-track">
+                        <div class="slide"><i class="devicon-php-plain colored"></i></div>
+                        <div class="slide"><i class="devicon-javascript-plain colored"></i></div>
+                        <div class="slide"><i class="devicon-dart-plain colored"></i></div>
+                        <div class="slide"><i class="devicon-laravel-plain colored"></i></div>
+                        <div class="slide"><i class="devicon-flutter-plain colored"></i></div>
+                        <div class="slide"><i class="devicon-react-plain colored"></i></div>
+                        <div class="slide"><i class="devicon-python-plain colored"></i></div>
+                        <div class="slide"><i class="devicon-mysql-plain colored"></i></div>
+                        <div class="slide"><i class="devicon-postgresql-plain colored"></i></div>
+
+                        <!-- duplicate -->
+                        <div class="slide"><i class="devicon-php-plain colored"></i></div>
+                        <div class="slide"><i class="devicon-javascript-plain colored"></i></div>
+                        <div class="slide"><i class="devicon-dart-plain colored"></i></div>
+                        <div class="slide"><i class="devicon-laravel-plain colored"></i></div>
+                        <div class="slide"><i class="devicon-flutter-plain colored"></i></div>
+                        <div class="slide"><i class="devicon-react-plain colored"></i></div>
+                        <div class="slide"><i class="devicon-python-plain colored"></i></div>
+                        <div class="slide"><i class="devicon-mysql-plain colored"></i></div>
+                        <div class="slide"><i class="devicon-postgresql-plain colored"></i></div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section experience">
+            <div class="section-inner">
+
+                <div class="section-title">
+                    <h2>Education & <span>Experience</span></h2>
+                    <p>My learning journey</p>
+                </div>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+                        <span class="dot"></span>
+                        <div class="content">
+                            <h3>SMK Taruna Bhakti Student – Software Engineering</h3>
+                            <small>2022 – 2025</small>
+                            <p>
+                                Learning web development, mobile development, <br> database systems,
+                                UI/UX design, and game development.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="dot"></span>
+                        <div class="content">
+                            <h3>Internship at PT. Bangun Kreatif Abadi – Fullstack Web Developer</h3>
+                            <small>Sep 2024 – Jan 2025</small>
+                            <p>
+                                Working as Fullstack Web Developer using NextJS, NestJS, and PostgreSQL.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <span class="dot"></span>
+                        <div class="content">
+                            <h3>UBSI Student – Informatics</h3>
+                            <small>2025 – Now</small>
+                            <p>
+                                Learning web development, database systems,
+                                Laravel, and UI/UX design.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Project Section -->
+        <section id="project" class="section project">
+            <div class="section-inner">
+
+                <div class="section-title">
+                    <h2>My <span>Projects</span></h2>
+                    <p>Some things I’ve built</p>
+                </div>
+
+                <div class="project-list">
+
+                    <div class="project-item">
+                        <div class="project-info">
+                            <h3>To Do List - TaskMate</h3>
+                            <p>
+                                To do list application with Task Management, Kanban Board, Event Calendar, Notes, Weekly Schedule, and user authentication.
+                            </p>
+
+                            <div class="project-tech">
+                                <span>Laravel</span>
+                                <span>MySQL</span>
+                                <span>JavaScript Ajax</span>
+                                <span>Vanilla CSS</span>
+                            </div>
+
+                            <div class="project-action">
+                                <button class="btn-primary">Detail</button>
+                                <a href="#" class="btn-outline">Github</a>
+                            </div>
+                        </div>
+
+                        <div class="project-image">
+                            <img src="images/Taskmate.jfif" alt="POS Laravel">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact">
+            <div class="section-inner">
+
+                <div class="section-title">
+                    <h2>Contact <span>Me</span></h2>
+                    <p>Let’s work together</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <p>kemalgafan@gmail.com</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <i class="fab fa-instagram"></i>
+                        <p>@zaayeenn_</p>
+                    </div>
+
+                    <div class="contact-card">
+                        <i class="fab fa-github"></i>
+                        <p>github.com/zayennn</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+
+
+    </div>
+
+    <div id="projectModal" class="project-modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeProject()">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDesc"></p>
+            <ul id="modalFeature"></ul>
+        </div>
+    </div>
 
 </body>
 
@@ -95,6 +308,7 @@
 <script src="./script/cursor.js"></script>
 <script src="./script/typed.js"></script>
 <script src="./script/aos.js"></script>
+<script src="./script/project.js"></script>
 
 
 </html>
