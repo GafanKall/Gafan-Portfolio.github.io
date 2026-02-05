@@ -1,0 +1,48 @@
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 8px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--primary-color);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.timeline-item .dot {
+  position: absolute;
+  left: -2px;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+  background: var(--primary-color);
+  border-radius: 50%;
+}
+
+.timeline-item .content {
+  background: var(--bg-card);
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.timeline-item h3 {
+  color: var(--light-color);
+}
+
+.timeline-item small {
+  color: var(--text-color);
+}
+
+.timeline-item p {
+  margin-top: 0.5rem;
+  color: var(--text-color);
+}

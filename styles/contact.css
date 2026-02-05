@@ -1,0 +1,27 @@
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.contact-card {
+  background: var(--bg-card);
+  padding: 2rem;
+  border-radius: 14px;
+  text-align: center;
+  transition: 0.3s ease;
+}
+
+.contact-card i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.contact-card p {
+  color: var(--light-color);
+}
+
+.contact-card:hover {
+  transform: translateY(-8px);
+}

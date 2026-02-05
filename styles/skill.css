@@ -1,0 +1,99 @@
+.skills {
+  padding: 100px 0;
+  background: #0b0b1a;
+  color: white;
+  overflow: hidden;
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.skills-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.skills-header h2 {
+  font-size: 36px;
+}
+
+.skills-header span {
+  color: #5865f2;
+}
+
+.skills-header p {
+  opacity: 0.65;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+}
+
+/* ===== SLIDER ===== */
+.slider {
+  position: relative;
+  overflow: hidden;
+}
+
+/* fade kiri kanan */
+.slider::before,
+.slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+}
+
+.slider::before {
+  left: 0;
+  background: linear-gradient(to right, #0b0b1a, transparent);
+}
+
+.slider::after {
+  right: 0;
+  background: linear-gradient(to left, #0b0b1a, transparent);
+}
+
+.slide-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+}
+
+/* .slider:hover .slide-track {
+  animation-play-state: paused;
+} */
+
+.slide {
+  min-width: 220px;
+  height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide i {
+  font-size: 70px;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: 0.3s ease;
+}
+
+.slide i:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.25);
+}
+
+/* infinite smooth loop */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
