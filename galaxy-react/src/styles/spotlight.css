@@ -1,0 +1,20 @@
+.spotlight-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: inherit;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.spotlight-card-glow {
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    z-index: 0;
+    transition: opacity 0.3s;
+}
+
+.spotlight-card>*:not(.spotlight-card-glow) {
+    position: relative;
+    z-index: 1;
+}

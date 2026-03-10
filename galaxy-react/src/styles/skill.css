@@ -1,100 +1,251 @@
-.skills {
-  padding: 100px 0;
-  background: #0b0b1a;
-  color: white;
-  overflow: hidden;
+.skills-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(180px, auto);
+  gap: 1.5rem;
 }
 
-.skills-container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
+.skill-bento-item {
+  height: 100%;
 }
 
-.skills-header {
-  text-align: center;
-  margin-bottom: 60px;
-  font-family: 'Exo 2', sans-serif;
+.frontend-card {
+  grid-column: span 2;
+  grid-row: span 2;
 }
 
-.skills-header h2 {
-  font-size: 50px;
+.backend-card {
+  grid-column: span 1;
+  grid-row: span 2;
 }
 
-.skills-header span {
-  color: #5865f2;
+.mobile-card {
+  grid-column: span 1;
+  grid-row: span 1;
 }
 
-.skills-header p {
-  opacity: 0.65;
-  font-size: 14px;
-  letter-spacing: 0.3px;
+.tools-card {
+  grid-column: span 2;
+  grid-row: span 1;
 }
 
-/* ===== SLIDER ===== */
-.slider {
+.skill-category-card {
+  height: 100%;
+  background: rgba(10, 10, 25, 0.5);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Distribute content */
+  gap: 2rem;
   position: relative;
   overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-/* fade kiri kanan */
-.slider::before,
-.slider::after {
+.skill-category-card:hover {
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+}
+
+/* Mesh Gradient Background */
+.skill-category-card::before {
   content: "";
   position: absolute;
   top: 0;
-  width: 120px;
-  height: 100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 100% 100%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+  opacity: 0.5;
+  transition: opacity 0.6s ease;
+  z-index: -1;
+}
+
+.skill-category-card:hover::before {
+  opacity: 1;
+}
+
+.category-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
   z-index: 2;
 }
 
-.slider::before {
-  left: 0;
-  background: linear-gradient(to right, #0b0b1a, transparent);
-}
-
-.slider::after {
-  right: 0;
-  background: linear-gradient(to left, #0b0b1a, transparent);
-}
-
-.slide-track {
+.category-icon-wrapper {
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
   display: flex;
-  width: max-content;
-  animation: scroll 25s linear infinite;
-}
-
-/* .slider:hover .slide-track {
-  animation-play-state: paused;
-} */
-
-.slide {
-  min-width: 220px;
-  height: 140px;
-  display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.slide i {
-  font-size: 70px;
-  filter: grayscale(100%);
-  opacity: 0.7;
-  transition: 0.3s ease;
+.category-info {
+  flex-grow: 1;
 }
 
-.slide i:hover {
-  filter: grayscale(0%);
-  opacity: 1;
-  transform: scale(1.25);
+.category-name {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
 }
 
-/* infinite smooth loop */
-@keyframes scroll {
-  from {
-    transform: translateX(0);
+.category-description {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  max-width: 90%;
+}
+
+.skills-tags-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  z-index: 2;
+}
+
+/* Premium Pill Tag */
+.skill-glass-tag {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 1.25rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 99px;
+  /* Pill Shape */
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-main);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+}
+
+.skill-glass-tag:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--brand-color);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.tag-icon {
+  font-size: 1.25rem;
+  z-index: 2;
+}
+
+.tag-label {
+  position: relative;
+  z-index: 2;
+}
+
+.tag-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, var(--brand-color), transparent 70%);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+  transition: all 0.4s ease;
+  pointer-events: none;
+  filter: blur(15px);
+}
+
+.skill-glass-tag:hover .tag-glow {
+  opacity: 0.2;
+  transform: translate(-50%, -50%) scale(1.2);
+}
+
+/* Floating Decorative Icon in Background */
+.category-bg-icon {
+  position: absolute;
+  bottom: -10%;
+  right: -5%;
+  font-size: 8rem;
+  opacity: 0.03;
+  transform: rotate(-15deg);
+  pointer-events: none;
+  z-index: 1;
+  transition: all 0.6s ease;
+}
+
+.skill-category-card:hover .category-bg-icon {
+  opacity: 0.06;
+  transform: rotate(0deg) scale(1.1);
+  right: 0%;
+}
+
+.card-ambient-glow {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.15), transparent 75%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 1024px) {
+  .skills-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
-  to {
-    transform: translateX(-50%);
+
+  .frontend-card,
+  .backend-card,
+  .tools-card {
+    grid-column: span 2;
+  }
+
+  .mobile-card {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-bento-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+
+  .frontend-card,
+  .backend-card,
+  .mobile-card,
+  .tools-card {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .skill-category-card {
+    padding: 1.75rem;
+    min-height: 250px;
+  }
+
+  .category-name {
+    font-size: 1.4rem;
+  }
+
+  .category-bg-icon {
+    font-size: 6rem;
   }
 }

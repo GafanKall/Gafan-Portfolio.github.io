@@ -1,51 +1,140 @@
 import React, { useEffect, useRef } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Typed from 'typed.js';
+import { Github, Instagram, Linkedin, ArrowRight, Sparkles } from 'lucide-react';
+import Magnetic from './Magnetic';
 import '../styles/hero.css';
-import profileImg from '../assets/me.jpg'; // Adjust path if needed
+import profileImg from '../assets/me.jpg';
 
 const Hero = () => {
     const el = useRef(null);
+    const [badgeIndex, setBadgeIndex] = React.useState(0);
+    const badges = ["Creative Mind", "Problem Solver", "Fast Learner", "Tech Enthusiast"];
+
+    React.useEffect(() => {
+        const interval = setInterval(() => {
+            setBadgeIndex((prev) => (prev + 1) % badges.length);
+        }, 3000);
+        return () => clearInterval(interval);
+    }, []);
 
     useEffect(() => {
         const typed = new Typed(el.current, {
-            strings: ['Junior Fullstack Web Developer', 'UI/UX Designer', 'Web Developer', 'Code with passion, design with purpose', 'Crafting ideas into digital experiences'],
-            typeSpeed: 10,
-            backSpeed: 0,
-            fadeOut: true,
+            strings: [
+                'Junior Fullstack Web Developer',
+                'UI/UX Designer',
+                'Web Developer',
+                'Passionate Coder',
+                'Digital Craftsmanship'
+            ],
+            typeSpeed: 50,
+            backSpeed: 30,
             loop: true
         });
 
-        return () => {
-            typed.destroy();
-        };
+        return () => typed.destroy();
     }, []);
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.2,
+                delayChildren: 0.3
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { y: 20, opacity: 0 },
+        visible: {
+            y: 0,
+            opacity: 1,
+            transition: { duration: 0.5, ease: "easeOut" }
+        }
+    };
+
     return (
-        <section className="hero" id="home">
-            <div className="hero-content">
-                <div className="hero-subtitle">Hello Everyone, I am</div>
-                <div className="hero-title">Muhammad Kemal <span>Gafan</span> </div>
-                <p className="hero-description" data-aos="fade-up" data-aos-delay="600">
-                    I'm a, <span ref={el}></span>
-                </p>
-                <div className="hero-social">
-                    <a href="https://github.com/GafanKall" className="social github" target="_blank" rel="noreferrer">
-                        <i className="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.instagram.com/gafankemal/" className="social instagram" target="_blank" rel="noreferrer">
-                        <i className="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/muhammad-kemal-gafan-kusuma-3b536a29b/"
-                        className="social linkedin" target="_blank" rel="noreferrer">
-                        <i className="fab fa-linkedin"></i>
-                    </a>
+        <section className="hero-section container" id="home">
+            <motion.div
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                className="hero-grid"
+            >
+                <div className="hero-info">
+                    <motion.span variants={itemVariants} className="hero-badge">
+                        Available for Work
+                    </motion.span>
+                    <motion.h1 variants={itemVariants} className="hero-main-title">
+                        Building Digital <br />
+                        <span>Experiences</span> That Matter
+                    </motion.h1>
+                    <motion.p variants={itemVariants} className="hero-subline">
+                        Hi, I'm <span className="highlight">Muhammad Kemal Gafan</span>.
+                        I'm a <span className="typed-text" ref={el}></span>
+                    </motion.p>
+
+                    <motion.div variants={itemVariants} className="hero-actions">
+                        <a href="#project" className="btn-primary">
+                            View Works <ArrowRight size={18} />
+                        </a>
+                        <div className="social-links-hero">
+                            <Magnetic>
+                                <a href="https://github.com/GafanKall" target="_blank" rel="noreferrer" className="social-link">
+                                    <Github size={24} />
+                                </a>
+                            </Magnetic>
+                            <Magnetic>
+                                <a href="https://www.instagram.com/gafankemal/" target="_blank" rel="noreferrer" className="social-link">
+                                    <Instagram size={24} />
+                                </a>
+                            </Magnetic>
+                            <Magnetic>
+                                <a href="https://www.linkedin.com/in/muhammad-kemal-gafan-kusuma-3b536a29b/" target="_blank" rel="noreferrer" className="social-link">
+                                    <Linkedin size={24} />
+                                </a>
+                            </Magnetic>
+                        </div>
+                    </motion.div>
                 </div>
 
-            </div>
-            <div className="image-content hero">
-                <img src={profileImg} alt="Profile Image" />
-            </div>
-
+                <motion.div
+                    variants={itemVariants}
+                    className="hero-image-wrapper"
+                >
+                    <div className="image-blob">
+                        <img src={profileImg} alt="Kemal Gafan" />
+                    </div>
+                    <div className="blob-decoration"></div>
+                    <motion.div
+                        animate={{
+                            y: [0, -15, 0],
+                            rotate: [0, 5, 0]
+                        }}
+                        transition={{
+                            duration: 5,
+                            repeat: Infinity,
+                            ease: "easeInOut"
+                        }}
+                        className="floating-card glass"
+                    >
+                        <Sparkles size={16} color="var(--accent-primary)" />
+                        <AnimatePresence mode="wait">
+                            <motion.span
+                                key={badgeIndex}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                exit={{ opacity: 0, y: -10 }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                {badges[badgeIndex]}
+                            </motion.span>
+                        </AnimatePresence>
+                    </motion.div>
+                </motion.div>
+            </motion.div>
         </section>
     );
 };

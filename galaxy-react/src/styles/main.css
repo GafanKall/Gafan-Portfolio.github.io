@@ -1,80 +1,139 @@
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&display=swap');
-
 :root {
-    --primary-color: #525CEB;
-    --secondary-color: #00cec9;
-    --dark-color: #0f0e17;
-    --light-color: #fffffe;
-    --accent-color: #FFC7A7;
-    --text-color: #a7a9be;
-    --text-dark: #2d3436;
-    --bg-dark: #0f0e17;
-    --bg-light: #fffffe;
-    --bg-card: #110f1e;
-    --overlay-color: rgba(15, 14, 23, 0.8);
-    --transition: all 0.3s ease;
-    --border-radius: 8px;
-    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    --section-padding: 100px 0;
-}
+  --font-main: 'Outfit', system-ui, sans-serif;
+  --bg-dark: #030014;
+  --bg-card: rgba(10, 10, 20, 0.4);
+  --accent-primary: #6366f1;
+  --accent-secondary: #a855f7;
+  --text-main: #f8fafc;
+  --text-muted: #cbd5e1;
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
 
-a {
-    color: #fff;
-    text-decoration: none;
-}
+  font-family: var(--font-main);
+  line-height: 1.6;
+  font-weight: 400;
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
+  color: var(--text-main);
+  background-color: var(--bg-dark);
 
-::-webkit-scrollbar {
-    width: 8px;
-    background-color: var(--bg-dark);
-}
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-::-webkit-scrollbar-thumb {
-    background-color: var(--primary-color);
-    border-radius: 10px;
+  scroll-behavior: smooth;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: var(--bg-dark);
-    color: #333;
-    width: 100%;
-    height: auto;
-    overflow-x: hidden;
-    position: relative;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--bg-dark);
+  position: relative;
 }
 
-.section {
-  padding: 120px 0;
+body::before {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(99, 102, 241, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 100% 100%, rgba(168, 85, 247, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 50%);
+  z-index: -2;
+  pointer-events: none;
+  transform: translate(var(--mouse-x, 0), var(--mouse-y, 0));
+  transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-.section-inner {
-  max-width: 1100px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.glass {
+  background: var(--bg-card);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.section-padding {
+  padding: 120px 5%;
+}
+
+.container {
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
 }
 
-.section-title {
-  margin-bottom: 4rem;
+.section-header {
+  text-align: center;
+  margin-bottom: 5rem;
 }
 
-.section-title h2 {
-  font-size: 3rem;
-  font-family: 'Audiowide', cursive;
-  color: var(--light-color);
+.subtitle {
+  display: block;
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
 }
 
-.section-title span {
-  color: var(--primary-color);
+.title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
 }
 
-.section-title p {
-  color: var(--text-color);
-  margin-top: 0.5rem;
+.title span {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e1b4b;
+  border-radius: 10px;
+  border: 2px solid var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-primary);
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 80px 20px;
+  }
 }

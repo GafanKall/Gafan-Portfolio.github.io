@@ -1,48 +1,105 @@
-.timeline {
+.timeline-container {
   position: relative;
-  padding-left: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
 }
 
-.timeline::before {
-  content: "";
+.timeline-container::before {
+  content: '';
   position: absolute;
-  left: 8px;
+  left: 25px;
   top: 0;
   bottom: 0;
   width: 2px;
-  background: var(--primary-color);
+  background: linear-gradient(to bottom, transparent, var(--accent-primary), var(--accent-secondary), transparent);
+  opacity: 0.3;
 }
 
-.timeline-item {
+.timeline-item-new {
+  display: flex;
+  gap: 2rem;
   position: relative;
-  margin-bottom: 3rem;
 }
 
-.timeline-item .dot {
-  position: absolute;
-  left: -2px;
-  top: 5px;
-  width: 16px;
-  height: 16px;
-  background: var(--primary-color);
-  border-radius: 50%;
+.timeline-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent-primary);
+  position: relative;
+  z-index: 2;
 }
 
-.timeline-item .content {
-  background: var(--bg-card);
-  padding: 1.5rem;
-  border-radius: 12px;
+.timeline-content {
+  padding: 2rem;
+  border-radius: 24px;
+  flex-grow: 1;
+  transition: all 0.3s ease;
 }
 
-.timeline-item h3 {
-  color: var(--light-color);
+.timeline-content:hover {
+  border-color: var(--accent-primary);
+  transform: translateX(10px);
 }
 
-.timeline-item small {
-  color: var(--text-color);
+.timeline-header {
+  margin-bottom: 0.75rem;
 }
 
-.timeline-item p {
-  margin-top: 0.5rem;
-  color: var(--text-color);
+.timeline-duration {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-primary);
+  background: rgba(99, 102, 241, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.timeline-content h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.timeline-subtitle {
+  font-weight: 600;
+  color: var(--text-main);
+  opacity: 0.9;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.timeline-desc {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .timeline-container::before {
+    display: none;
+  }
+
+  .timeline-item-new {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .timeline-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .timeline-content:hover {
+    transform: translateY(-5px);
+  }
 }
