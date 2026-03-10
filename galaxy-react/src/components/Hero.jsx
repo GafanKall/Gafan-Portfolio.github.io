@@ -4,7 +4,7 @@ import Typed from 'typed.js';
 import { Github, Instagram, Linkedin, ArrowRight, Sparkles } from 'lucide-react';
 import Magnetic from './Magnetic';
 import '../styles/hero.css';
-import profileImg from '../assets/me.jpg';
+import profileImg from '../assets/hero-profile.jpg';
 
 const Hero = () => {
     const el = useRef(null);
