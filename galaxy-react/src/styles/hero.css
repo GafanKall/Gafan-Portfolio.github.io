@@ -85,6 +85,29 @@
     background: #4f46e5;
 }
 
+.btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-main);
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.btn-outline:hover {
+    background: rgba(99, 102, 241, 0.08);
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -10px rgba(99, 102, 241, 0.2);
+}
+
 .social-links-hero {
     display: flex;
     gap: 1.25rem;

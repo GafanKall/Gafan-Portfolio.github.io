@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Typed from 'typed.js';
-import { Github, Instagram, Linkedin, ArrowRight, Sparkles } from 'lucide-react';
+import { Github, Instagram, Linkedin, ArrowRight, Sparkles, ExternalLink } from 'lucide-react';
 import Magnetic from './Magnetic';
 import '../styles/hero.css';
 import profileImg from '../assets/hero-profile.jpg';
@@ -79,6 +79,14 @@ const Hero = () => {
                     <motion.div variants={itemVariants} className="hero-actions">
                         <a href="#project" className="btn-primary">
                             View Works <ArrowRight size={18} />
+                        </a>
+                        <a
+                            href="https://drive.google.com/file/d/12F3OHwnp8s_8NqhC0c98mpnJ0c2GlpqS/view?usp=sharing"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="btn-outline"
+                        >
+                            View CV <ExternalLink size={18} />
                         </a>
                         <div className="social-links-hero">
                             <Magnetic>
